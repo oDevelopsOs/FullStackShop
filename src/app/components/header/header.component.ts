@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { RouterLink } from '@angular/router';
 import { RouterOutlet } from '@angular/router';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -7,18 +9,19 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatTableModule } from '@angular/material/table';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { HeaderComponent } from './components/header/header.component';
+import { CurrencyPipe } from '@angular/common';
 
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-header',
   standalone: true,
   imports: [
+    CurrencyPipe,
+    MatToolbarModule ,
     RouterOutlet,
     MatSlideToggleModule,
     MatSidenavModule,
@@ -32,11 +35,11 @@ import { HeaderComponent } from './components/header/header.component';
     MatBadgeModule,
     MatTableModule,
     MatSnackBarModule,
-    HeaderComponent
-  ],
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    HeaderComponent ,
+     RouterLink],
+  templateUrl: './header.component.html',
+  styleUrl: './header.component.scss'
 })
-export class AppComponent {
-  title = 'Shop';
+export class HeaderComponent{
+
 }
